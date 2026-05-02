@@ -1,9 +1,16 @@
-package com.example.book_management.entity;
+package com.example.book_management.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "authors")
 public class Author {
-    long id;
-    String name;
-    String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(columnDefinition = "varchar (100)", nullable = false)
+    private String name;
+    private String email;
 
     public Author() {}
 
