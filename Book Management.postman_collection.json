@@ -1,0 +1,195 @@
+{
+  "info": {
+    "_postman_id": "009bc30b-9458-4b39-8d6f-94fc4ecfbe30",
+    "name": "Book Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18119106",
+    "_collection_link": "https://go.postman.co/collection/18119106-009bc30b-9458-4b39-8d6f-94fc4ecfbe30?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get All Books",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"authorId\": 1,\r\n    \"title\": \"Chuyện cây táo\",\r\n    \"price\": 96\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Book By Id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"title\" : \"Lão Hạc\",\r\n    \"price\" : 96,\r\n    \"author\" : {\r\n        \"id\" : 1,\r\n        \"name\" : \"Nam Cao\",\r\n        \"email\" : \"nc@gmail.com\"\r\n    }\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search By Title",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"title\" : \"Lão Hạc\",\r\n    \"price\" : 96,\r\n    \"author\" : {\r\n        \"id\" : 1,\r\n        \"name\" : \"Nam Cao\",\r\n        \"email\" : \"nc@gmail.com\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books/searchByTitle?keyword=mat biec",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books",
+            "searchByTitle"
+          ],
+          "query": [
+            {
+              "key": "keyword",
+              "value": "mat biec"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Book Hight Price",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"title\" : \"Lão Hạc\",\r\n    \"price\" : 96,\r\n    \"author\" : {\r\n        \"id\" : 1,\r\n        \"name\" : \"Nam Cao\",\r\n        \"email\" : \"nc@gmail.com\"\r\n    }\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books/getBookHightPrice",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books",
+            "getBookHightPrice"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Statistics By Author",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"title\" : \"Lão Hạc\",\r\n    \"price\" : 96,\r\n    \"author\" : {\r\n        \"id\" : 1,\r\n        \"name\" : \"Nam Cao\",\r\n        \"email\" : \"nc@gmail.com\"\r\n    }\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books/statisticsByAuthor",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "books",
+            "statisticsByAuthor"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

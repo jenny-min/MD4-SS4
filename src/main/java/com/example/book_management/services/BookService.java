@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BookService {
@@ -38,5 +40,17 @@ public class BookService {
             newBook.setPrice(bookRequest.getPrice());
             return new ResponseEntity<>(bookRepository.save(newBook), HttpStatus.CREATED);
         }
+    }
+
+    public List<Book> searchByTitle(@RequestBody String keyword) {
+        return bookRepository.findByTitleContainingIgnoreCase(keyword);
+    }
+
+    public List<Book> getPremiumBooks() {
+        return bookRepository.findBooksAboveAveragePrice();
+    }
+
+    public List<Map<String, Object>> getAuthorStats() {
+        return bookRepository.countBooksByAuthor();
     }
 }

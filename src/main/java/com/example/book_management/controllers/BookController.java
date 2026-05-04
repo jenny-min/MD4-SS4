@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/books")
@@ -34,5 +35,20 @@ public class BookController {
     @PostMapping
     public ResponseEntity<?> createBook(@RequestBody BookRequest bookRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(bookService.addBook(bookRequest));
+    }
+
+    @GetMapping("/searchByTitle")
+    public ResponseEntity<List<Book>> searchByTitle(String keyword) {
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.searchByTitle(keyword));
+    }
+
+    @GetMapping("/getBookHightPrice")
+    public ResponseEntity<List<Book>> getBookHightPrice() {
+        return ResponseEntity.ok(bookService.getPremiumBooks());
+    }
+
+    @GetMapping("/statisticsByAuthor")
+    public ResponseEntity<List<Map<String, Object>>> statisticsByAuthor() {
+        return ResponseEntity.ok(bookService.getAuthorStats());
     }
 }
