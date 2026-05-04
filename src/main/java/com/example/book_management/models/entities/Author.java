@@ -1,4 +1,4 @@
-package com.example.book_management.entities;
+package com.example.book_management.models.entities;
 
 import jakarta.persistence.*;
 
@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     @Column(columnDefinition = "varchar (100)", nullable = false)
     private String name;
     private String email;
@@ -20,11 +20,11 @@ public class Author {
         this.email = email;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

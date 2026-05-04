@@ -1,4 +1,4 @@
-package com.example.book_management.entities;
+package com.example.book_management.models.entities;
 
 import jakarta.persistence.*;
 
@@ -8,7 +8,6 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(columnDefinition = "varchar (255)", nullable = false)
     private String title;
     private double price;
     @ManyToOne
