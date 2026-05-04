@@ -190,6 +190,14 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Get Borrow Book",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
     }
   ]
 }
